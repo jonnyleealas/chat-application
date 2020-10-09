@@ -1,7 +1,7 @@
 'use strict';
 //server 1
 let express = require('express');
-let socket = require('socket.io')
+let socket = require('socket.io');
 
 let app = express();
 let server = app.listen(4000, ()=>{
@@ -19,5 +19,9 @@ let io = socket(server);
 // listen for when connection is made 4
 // next connect to html for front end
 io.on('connection', (socket)=>{
- console.log('made socket connection',socket.id);
+  console.log('made socket connection', socket.id);
+  socket.on('chat', (data)=>{
+    io.sockets.emit('chat', data);
+  });
 });
+
