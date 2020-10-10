@@ -2,10 +2,10 @@
 //server 1
 let express = require('express');
 let socket = require('socket.io');
-
+let port = process.env.PORT || 4000;
 let app = express();
-let server = app.listen(4000, ()=>{
-  console.log('listening on request port 4000');
+let server = app.listen(port, ()=>{
+  console.log(`listening on ${port}`);
 });
 
 //static files this calls public mkdir and looks for all files it needs inside 2
