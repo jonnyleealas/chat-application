@@ -51,4 +51,4 @@ npm test server.test.js
 "faker": "^5.1.0"
 ```
 ### UML
-- [Socket.io UML](./assets/socketio.md)
+- [Socket.io UML](./assets/uml.md)
