@@ -23,7 +23,7 @@ message.addEventListener('keypress', ()=>{
 // listen for events from server
 
 socket.on('chat', (data)=>{
-    feedback.innerHTML = "";
+  feedback.innerHTML = "";
   output.innerHTML += '<p><strong>'+ data.handle +':</strong>'+ data.message + '</p>';
 });
 
