@@ -23,5 +23,9 @@ io.on('connection', (socket)=>{
   socket.on('chat', (data)=>{
     io.sockets.emit('chat', data);
   });
+  //shows handle is typing
+  socket.on('typing', (data)=>{
+    socket.broadcast.emit('typing', data);
+  });
 });
 
