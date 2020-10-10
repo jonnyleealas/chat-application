@@ -10,22 +10,25 @@ let server = app.listen(port, ()=>{
 
 //static files this calls public mkdir and looks for all files it needs inside 2
 app.use(express.static('public'));
-
+const chatHistory = [];
 //socket setup 3
 //runs on server
 
 let io = socket(server);
 
+app.get('/messages', (req, res) => {
+  res.send(chatHistory);
+});
 // listen for when connection is made 4
 // next connect to html for front end
 io.on('connection', (socket)=>{
   console.log('made socket connection', socket.id);
   socket.on('chat', (data)=>{
     io.sockets.emit('chat', data);
+    chatHistory.push(data);
   });
   //shows handle is typing
   socket.on('typing', (data)=>{
     socket.broadcast.emit('typing', data);
   });
 });
-
