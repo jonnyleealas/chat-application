@@ -1,7 +1,7 @@
 'use strict';
 // Make connection with html script tag
 
-let socket = io.connect(`https://chatter-ball-z.herokuapp.com/${process.env.PORT}`);
+let socket = io();
 
 // Query DOM
 let message = document.getElementById('message');
