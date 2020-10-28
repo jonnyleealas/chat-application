@@ -1,6 +1,7 @@
 # chat-application
 chat application using socket.io
-
+[![HitCount](http://hits.dwyl.com/jonnyleealas/chat-application.svg)](http://hits.dwyl.com/jonnyleealas/chat-application)
+ 
 ## Business Requirements
 Allow users to send and receive message in real time event programming using socket.io
 
